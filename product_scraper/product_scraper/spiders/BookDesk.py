@@ -8,7 +8,7 @@ class BookCheck(scrapy.Spider):
     def parseLink(self, response, **kwargs):
         item = {
             "name": response.css("div.book_info h1::text").get(),
-            "description": response.css("div.wrap_description p:nth-child(3)::text").get(),
+            "description": response.css("div.wrap_description p:nth-child(3)::text").get()[1:],
         }
         yield item
 

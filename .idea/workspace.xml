@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="designer">
-      <change beforePath="$PROJECT_DIR$/.idea/HackathonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HackathonProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="Ееееее">
+      <change afterPath="$PROJECT_DIR$/books.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,17 +23,38 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="28siaVv2omux7el2eDEP9VwYbgu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "D:/PythonTraining/example"
-  }
-}]]></component>
-  <component name="RunManager">
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+  </component>
+  <component name="RunManager" selected="Python.Project">
+    <configuration name="BookDesk" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="HackathonProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/product_scraper/product_scraper/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/product_scraper/product_scraper/spiders/BookDesk.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Project" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="HackathonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -57,6 +76,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.BookDesk" />
+      <item itemvalue="Python.Project" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Project" />
@@ -107,14 +130,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652029361335</updated>
     </task>
-    <task id="LOCAL-00006" summary="designer">
-      <created>1652041398039</created>
+    <task id="LOCAL-00006" summary="Ееееее">
+      <created>1652039310139</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1652041398039</updated>
+      <updated>1652039310139</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ееееее">
+      <created>1652040839068</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1652040839068</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,11 +159,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="scrapy start" />
     <MESSAGE value="scrapy_start" />
     <MESSAGE value="scrapy_2" />
     <MESSAGE value="a" />
-    <MESSAGE value="designer" />
-    <option name="LAST_COMMIT_MESSAGE" value="designer" />
+    <MESSAGE value="Ееееее" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ееееее" />
   </component>
 </project>
