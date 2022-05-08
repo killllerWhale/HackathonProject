@@ -28,6 +28,7 @@ class Ui_MainWindow(object):
         self.label.setGeometry(QtCore.QRect(0, 0, 500, 50))
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
+        self.label.setStyleSheet("QLabel{font-size: 18pt;}")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(400, 50, 100, 50))
         self.pushButton.setStyleSheet("background-color: rgb(85, 109, 236);\n"
