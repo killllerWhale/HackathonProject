@@ -5,4 +5,7 @@ class BookCheck(scrapy.Spider):
     start_urls = ["https://avidreaders.ru/books/"]
 
     def parse(self, response):
-
+        for products in response.css("div.card_info"):
+            yield {
+                "name" : products
+            }
