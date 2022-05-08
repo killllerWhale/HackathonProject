@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="Ееееее">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_scraper/product_scraper/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_scraper/product_scraper/items.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +23,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="28siaVv2omux7el2eDEP9VwYbgu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
   </component>
   <component name="RunManager" selected="Python.Project">
     <configuration name="BookDesk" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -133,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652039310139</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ееееее">
+      <created>1652040839068</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1652040839068</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +159,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="scrapy start" />
     <MESSAGE value="scrapy_start" />
     <MESSAGE value="scrapy_2" />
