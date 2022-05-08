@@ -7,5 +7,5 @@ class BookCheck(scrapy.Spider):
     def parse(self, response):
         for products in response.css("div.card_info"):
             yield {
-                "name" : products
+                "name" : products.css("div.book_name a::text").get()
             }

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="scrapy_start">
-      <change beforePath="$PROJECT_DIR$/product_scraper/product_scraper/spiders/BookDesk.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_scraper/product_scraper/spiders/BookDesk.py" afterDir="false" />
-    </list>
+    <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="scrapy_2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652022396869</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="scrapy_2">
+      <created>1652022768824</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652022768824</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="scrapy start" />
     <MESSAGE value="scrapy_start" />
-    <option name="LAST_COMMIT_MESSAGE" value="scrapy_start" />
+    <MESSAGE value="scrapy_2" />
+    <option name="LAST_COMMIT_MESSAGE" value="scrapy_2" />
   </component>
 </project>
