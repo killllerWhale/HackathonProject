@@ -17,3 +17,4 @@ class BookCheck(scrapy.Spider):
             yield {
                 "name" : products.css("div.book_name a::text").get()
             }
+        next_page = response.css("div.current")
