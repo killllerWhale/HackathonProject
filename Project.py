@@ -1,1 +1,2 @@
 print("Слава")
+print("Heckfy")
