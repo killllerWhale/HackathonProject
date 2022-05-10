@@ -20,7 +20,7 @@ processed_article = re.sub(r'\s+', ' ', processed_article)
 all_sentences = nltk.sent_tokenize(processed_article)
 all_words = [nltk.word_tokenize(sent) for sent in all_sentences]
 word2vec = Word2Vec(all_words)
-vocabulary = word2vec.wv.vocab
+vocabulary = word2vec.wv.key_to_index
 print(vocabulary)
 
 #print(model_string)
