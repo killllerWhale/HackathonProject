@@ -1,6 +1,9 @@
 import numpy as np
 from scipy import spatial
 from gensim.models import Word2Vec
+import re
+import nltk
+
 import csv
 model_string = ""
 with open("books.csv", encoding='utf-8') as r_file:
@@ -10,8 +13,17 @@ with open("books.csv", encoding='utf-8') as r_file:
     for row in file_reader:
         for elem in row:
             model_string += elem + " "
+processed_article = model_string.lower()
+processed_article = re.sub('[^a-zA-Z]', ' ',processed_article )
+processed_article = re.sub(r'\s+', ' ', processed_article)
+# Preparing the dataset
+all_sentences = nltk.sent_tokenize(processed_article)
+all_words = [nltk.word_tokenize(sent) for sent in all_sentences]
+word2vec = Word2Vec(all_words)
+vocabulary = word2vec.wv.vocab
+print(vocabulary)
 
-print(model_string)
+#print(model_string)
 
 # index2word_set = set(model.wv.index2word)
 #
