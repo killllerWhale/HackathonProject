@@ -14,7 +14,7 @@ with open("books.csv", encoding='utf-8') as r_file:
         for elem in row:
             model_string += elem + " "
 processed_article = model_string.lower()
-processed_article = re.sub('[^a-zA-Z]', ' ',processed_article )
+processed_article = re.sub('[^a-zA-ZА-я]', ' ',processed_article )
 processed_article = re.sub(r'\s+', ' ', processed_article)
 # Preparing the dataset
 all_sentences = nltk.sent_tokenize(processed_article)
@@ -24,7 +24,7 @@ vocabulary = word2vec.wv.key_to_index
 print(vocabulary)
 
 
-index2word_set = set(word2vec.wv.index2word)
+index2word_set = set(word2vec.wv.index_to_key)
 
 def avg_feature_vector(sentence, model, num_features, index2word_set):
     words = sentence.split()
