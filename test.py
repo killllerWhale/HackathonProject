@@ -1,5 +1,6 @@
 import numpy as np
 from scipy import spatial
+from gensim.models import Word2Vec
 
 index2word_set = set(model.wv.index2word)
 
