@@ -3,8 +3,8 @@ from scipy import spatial
 from gensim.models import Word2Vec
 import re
 import nltk
-
 import csv
+
 model_string = ""
 with open("books.csv", encoding='utf-8') as r_file:
     # Создаем объект reader, указываем символ-разделитель ","
@@ -19,7 +19,7 @@ processed_article = re.sub(r'\s+', ' ', processed_article)
 # Preparing the dataset
 all_sentences = nltk.sent_tokenize(processed_article)
 all_words = [nltk.word_tokenize(sent) for sent in all_sentences]
-word2vec = Word2Vec(all_words)
+word2vec = Word2Vec(all_words, min_count=2)
 vocabulary = word2vec.wv.key_to_index
 print(vocabulary)
 
@@ -38,7 +38,7 @@ def avg_feature_vector(sentence, model, num_features, index2word_set):
         feature_vec = np.divide(feature_vec, n_words)
     return feature_vec
 
-s1_afv = avg_feature_vector('Серия романов о волшебнике Гарри Поттер', model=word2vec.wv.key_to_index, num_features=300, index2word_set=index2word_set)
-s2_afv = avg_feature_vector('Серия романов, написанная британской писательницей Дж. К. Роулинг. Книги представляют собой хронику приключений юного волшебника Гарри Поттера, а также его друзей Рона Уизли и Гермионы Грейнджер, обучающихся в школе чародейства и волшебства Хогвартс. Основной сюжет посвящён противостоянию Гарри и тёмного волшебника по имени лорд Волан-де-Морт, в чьи цели входит обретение бессмертия и порабощение магического мира.', model=word2vec.wv.key_to_index, num_features=300, index2word_set=index2word_set)
+s1_afv = avg_feature_vector('this is a sentence', model=word2vec.wv.key_to_index, num_features=300, index2word_set=index2word_set)
+s2_afv = avg_feature_vector('this is also sentence', model=word2vec.wv.key_to_index, num_features=300, index2word_set=index2word_set)
 sim = 1 - spatial.distance.cosine(s1_afv, s2_afv)
 print(sim)
