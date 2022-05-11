@@ -3,7 +3,11 @@ from scipy import spatial
 from gensim.models import Word2Vec
 import re
 import nltk
+from gensim import corpora
 import csv
+import gensim.downloader as api
+from multiprocessing import cpu_count
+from gensim.models.word2vec import Word2Vec
 
 model_string = ""
 with open("books.csv", encoding='utf-8') as r_file:
@@ -19,26 +23,24 @@ processed_article = re.sub(r'\s+', ' ', processed_article)
 # Preparing the dataset
 all_sentences = nltk.sent_tokenize(processed_article)
 all_words = [nltk.word_tokenize(sent) for sent in all_sentences]
-word2vec = Word2Vec(all_words, min_count=2)
-vocabulary = word2vec.wv.key_to_index
-print(vocabulary)
+# #  сохранение извлеченных токенов в словарь
+# my_dictionary = corpora.Dictionary(all_words)
+# # сохраните словарь на диске
+# #my_dictionary.save('my_dictionary.dict')
+#
+# # загрузите обратно
+# load_dict = corpora.Dictionary.load('my_dictionary.dict')
+#
+# # преобразование в слов Bag of Word
+# bow_corpus =[load_dict.doc2bow(doc, allow_update = True) for doc in all_words]
+# print(bow_corpus)
+w2v_model = Word2Vec(all_words, min_count=0, workers=cpu_count())
 
+# вектор слов для слова "время"
 
-index2word_set = set(word2vec.wv.index_to_key)
+print(w2v_model.wv.most_similar('нож'))
 
-def avg_feature_vector(sentence, model, num_features, index2word_set):
-    words = sentence.split()
-    feature_vec = np.zeros((num_features, ), dtype='float32')
-    n_words = 0
-    for word in words:
-        if word in index2word_set:
-            n_words += 1
-            feature_vec = np.add(feature_vec, model[word])
-    if (n_words > 0):
-        feature_vec = np.divide(feature_vec, n_words)
-    return feature_vec
+# сохранение и загрузка модели
+w2v_model.save('Word2VecModel')
+model = Word2Vec.load('Word2VecModel')
 
-s1_afv = avg_feature_vector('this is a sentence', model=word2vec.wv.key_to_index, num_features=300, index2word_set=index2word_set)
-s2_afv = avg_feature_vector('this is also sentence', model=word2vec.wv.key_to_index, num_features=300, index2word_set=index2word_set)
-sim = 1 - spatial.distance.cosine(s1_afv, s2_afv)
-print(sim)
