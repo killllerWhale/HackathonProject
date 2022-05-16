@@ -8,6 +8,7 @@ import csv
 import gensim.downloader as api
 from multiprocessing import cpu_count
 from gensim.models.word2vec import Word2Vec
+from pymilvus import Collection
 
 model_string = ""
 with open("books.csv", encoding='utf-8') as r_file:
@@ -38,9 +39,5 @@ w2v_model = Word2Vec(all_words, min_count=0, workers=cpu_count())
 
 # вектор слов для слова "время"
 
-print(w2v_model.wv.most_similar('нож'))
-
-# сохранение и загрузка модели
-w2v_model.save('Word2VecModel')
-model = Word2Vec.load('Word2VecModel')
+print(w2v_model.wv['нож'])
 
