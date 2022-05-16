@@ -17,7 +17,7 @@ from pymilvus import (
     Collection,
 )
 
-connections.connect("default", host="localhost", port="19530")
+connections.connect(alias="default", host="localhost", port="19530")
 
 fields = [
     FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=False),
@@ -25,8 +25,8 @@ fields = [
     FieldSchema(name="book_desk", dtype=DataType.FLOAT_VECTOR, dim=8)
 ]
 
-# schema = CollectionSchema(fields, "hello_milvus is the simplest demo to introduce the APIs")
-# hello_milvus = Collection("hello_milvus", schema)
+schema = CollectionSchema(fields, "hello_milvus is the simplest demo to introduce the APIs")
+hello_milvus = Collection("hello_milvus", schema)
 book_name = []
 book_desc = []
 with open("books.csv", encoding='utf-8') as r_file:
