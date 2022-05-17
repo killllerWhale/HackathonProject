@@ -19,8 +19,8 @@ class Vector:
         self.book_desc = []
         self.book_desc_norm = []
 
-    # def pos(self,word, morth=pymorphy2.MorphAnalyzer()):
-    #     return morth.parse(word)[0].tag.POS
+    def pos(self,word, morth=pymorphy2.MorphAnalyzer()):
+        return morth.parse(word)[0].tag.POS
 
     # def parsi(self):
     #     Создаем массив векторов описания

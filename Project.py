@@ -61,6 +61,7 @@ class Book(QMainWindow):
             self.ui.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
             for i in range(len(reternn)):
                 textPrecent = int(reternn[i][1] * 100)
+                cur = con.cursor()
                 cur.execute('SELECT book_name FROM book WHERE id=%s', (reternn[i][0] + 1))
                 name = cur.fetchone()
                 cur.execute('SELECT book_desc FROM book WHERE id=%s', (reternn[i][0] + 1))
