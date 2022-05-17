@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 
 from mydesign import Ui_MainWindow
 from test import Vector
@@ -56,7 +56,6 @@ class Book(QMainWindow):
             self.ui.textEdit.setText("")
             reternn = self.vector.similarity(text)
             self.ui.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-            print(reternn)
             for i in range(len(reternn)):
                 textPrecent = int(reternn[i][1] * 100)
                 textlabel = self.vector.book_name[reternn[i][0]] +"  (совпадение: " + str(textPrecent) + "%)"

@@ -1,10 +1,5 @@
 import re
-import nltk
 import csv
-
-from multiprocessing import cpu_count
-from gensim.models import doc2vec
-from gensim.models.word2vec import Word2Vec
 import urllib.request
 from gensim.models.doc2vec import Doc2Vec
 import pymorphy2
