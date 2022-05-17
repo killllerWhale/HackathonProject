@@ -64,16 +64,19 @@ d2v_model.build_vocab(data_train)
 # Обучение модели Doc2Vec
 d2v_model.train(data_train, total_examples=d2v_model.corpus_count, epochs=d2v_model.epochs)
 
-# Анализ выходных данных
-analyze = d2v_model.infer_vector(['нож', 'студент', 'топор', 'старуха'])
-
+# # Анализ выходных данных
+# analyze = d2v_model.infer_vector(['нож', 'студент', 'топор', 'старуха'])
+#
 
 def similarity(model):
-    test_text = 'студент старуха'.split()
+    test_text = 'студент убил старуху топором'.split()
     inferred_vector = model.infer_vector(test_text)
     sims = model.dv.most_similar([inferred_vector], topn=10)
     for i in range(len(sims)):
+        print("----------")
+        print(book_name[sims[i][0]], end="\n")
         print(book_desc[sims[i][0]], end="\n")
+        print("----------")
     return sims
 
 
