@@ -44,6 +44,7 @@ class Ui_MainWindow(object):
         self.pushButton.setObjectName("pushButton")
         self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
         self.scrollArea.setGeometry(QtCore.QRect(0, 100, 500, 500))
+        self.scrollArea.setMaximumSize(QtCore.QSize(500, 16777215))
         self.scrollArea.setStyleSheet("background-color: rgb(241, 234, 234);")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")

@@ -108,6 +108,12 @@ font: 16pt &quot;MingLiU-ExtB&quot;;</string>
       <height>500</height>
      </rect>
     </property>
+    <property name="maximumSize">
+     <size>
+      <width>500</width>
+      <height>16777215</height>
+     </size>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(241, 234, 234);</string>
     </property>
