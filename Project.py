@@ -1,7 +1,6 @@
 import sys
 
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QMessageBox
 
 from mydesign import Ui_MainWindow

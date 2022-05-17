@@ -1,14 +1,20 @@
 import re
 import nltk
 import csv
+
 from multiprocessing import cpu_count
 from gensim.models import doc2vec
 from gensim.models.word2vec import Word2Vec
+import urllib.request
 from gensim.models.doc2vec import Doc2Vec
 import pymorphy2
 
 class Vector:
     def __init__(self):
+        logo = urllib.request.urlopen("https://drive.google.com/u/0/uc?id=1bhwREIVAu9pqnP-jnOIbHmuJb99hanR_&export=download").read()
+        f = open("d2v_Model_new", "wb")
+        f.write(logo)
+        f.close()
         self.book_name = []
         self.book_desc = []
         self.book_desc_norm = []
@@ -59,7 +65,7 @@ class Vector:
                             self.book_desc.append(result)
 
     def similarity(self, text):
-        d2v_model = Doc2Vec.load('d2v_Model')
+        d2v_model = Doc2Vec.load('d2v_Model_new')
         test_text = text.lower().split()
         functors_pos = {'INTJ', 'PRCL', 'CONJ', 'PREP'}
         s = [word for word in test_text if self.pos(word) not in functors_pos]
