@@ -77,18 +77,19 @@ class Book(QMainWindow):
                     label2.setWordWrap(True)
                     label3.setWordWrap(True)
 
-
                 self.vbox.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
                 self.vbox.addWidget(label)
                 self.vbox.addWidget(label2)
                 self.vbox.addWidget(label3)
                 self.vbox.update()
+
         except Exception as e:
             msg = QMessageBox()
             msg.setWindowTitle("Ошибка")
             msg.setText("Что то пошло не так ")
             msg.setIcon(QMessageBox.Warning)
             msg.exec_()
+
 
 if __name__ == '__main__':
     app = QApplication([])
