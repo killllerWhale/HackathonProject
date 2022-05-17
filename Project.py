@@ -61,10 +61,12 @@ class Book(QMainWindow):
             self.ui.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
             for i in range(len(reternn)):
                 textPrecent = int(reternn[i][1] * 100)
-                name = cur.execute('SELECT book_name FROM book WHERE id=%s', (reternn[i][0] + 1))
-                desc = cur.execute('SELECT book_desc FROM book WHERE id=%s', (reternn[i][0] + 1))
-                textlabel = str(name) + "  (совпадение: " + str(textPrecent) + "%)"
-                textlabel2 = str(desc)
+                cur.execute('SELECT book_name FROM book WHERE id=%s', (reternn[i][0] + 1))
+                name = cur.fetchone()
+                cur.execute('SELECT book_desc FROM book WHERE id=%s', (reternn[i][0] + 1))
+                desc = cur.fetchone()
+                textlabel = name[0] + "  (совпадение: " + str(textPrecent) + "%)"
+                textlabel2 = desc[0]
                 label = QtWidgets.QLabel(textlabel)
                 label.setMaximumWidth(460)
                 label.setMinimumHeight(4)
