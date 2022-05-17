@@ -7,7 +7,6 @@ from gensim.models.word2vec import Word2Vec
 from gensim.models.doc2vec import Doc2Vec
 import pymorphy2
 
-
 class Vector:
     def __init__(self):
         self.book_name = []
@@ -97,12 +96,4 @@ class Vector:
 # analyze = d2v_model.infer_vector(['нож', 'студент', 'топор', 'старуха'])
 # #Запись модели
 # d2v_model.save('d2v_Model')
-
-
-
-
-
-
-
-
 
