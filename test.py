@@ -6,6 +6,10 @@ from gensim.models.word2vec import Word2Vec
 import gensim
 import gensim.downloader as api
 from gensim.models import doc2vec
+import sys
+import numpy as np
+import gensim
+from gensim.models.doc2vec import Doc2Vec, LabeledSentence
 
 
 book_name = []
@@ -43,19 +47,51 @@ with open("books.csv", encoding='utf-8') as r_file:
                 book_desc.append(row[elem])
 
 
+TaggedDocument = gensim.models.doc2vec.TaggedDocument
+
+# Читать и обрабатывать данные
+def get_datatset(sentences):
+    all_sentence = []
+    for i, sentence in enumerate(sentences):
+        all_sentence.append(TaggedDocument(sentence.split(), tag=[i]))
+    return all_sentence
 
 
-# Для обучения модели нам нужен список целевых документов
-def tagged_document(list_of_ListOfWords):
-    for x, ListOfWords in enumerate(list_of_ListOfWords):
-        yield doc2vec.TaggedDocument(ListOfWords, [x])
+# Получить текстовый вектор из набора данных.
+def getVecs(model, corpus, vector_size):
+    vecs = [np.array(model.docvecs[z.tags[0]].reshape(1, vector_size)) for z in corpus]
+    return np.concatenate(vecs)
 
 
-# тренировочные данные
-data_train = list(tagged_document(book_desc))
+# Тренируйте модель с текстом набора данных
+def train(all_sentence, vector_size, min_count, epoch):
+    model = Doc2Vec(vector_size=vector_size, min_count=min_count, epochs=epoch)
+    model.build_vocab(all_sentence)
+    model.train(all_sentence, total_examples=model.corpus_count, epochs=model.epochs)
+    return model
 
-# вывести обученный набор данных
-print(data_train[:1])
+
+def similarity(model):
+    test_text = 'xxx xxx xxxxx'.split()
+    inferred_vector = model.infer_vector(test_text)
+    sims = model.most_similar([inferred_vector], topn=10)
+    return sims
+
+
+
+
+#
+# # Для обучения модели нам нужен список целевых документов
+# def tagged_document(list_of_ListOfWords):
+#     for x, ListOfWords in enumerate(list_of_ListOfWords):
+#         yield doc2vec.TaggedDocument(ListOfWords, [x])
+#
+#
+# # тренировочные данные
+# data_train = list(tagged_document(book_desc))
+#
+# # вывести обученный набор данных
+# print(data_train[:1])
 
 #print(book_desc)
 # print(book_name)
