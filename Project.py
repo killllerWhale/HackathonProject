@@ -1,10 +1,11 @@
 import sys
+
+from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QMessageBox
 
 import test
 from mydesign import Ui_MainWindow
 from test import Vector
-
 
 
 class Book(QMainWindow):
@@ -15,6 +16,10 @@ class Book(QMainWindow):
         self.vector = Vector()
         self.start()
         self.checkin_completion = 0
+        self.widget = QtWidgets.QWidget()
+        self.vbox = QtWidgets.QVBoxLayout()
+        self.ui.scrollAreaWidgetContents.setLayout(self.vbox)
+        self.ui.scrollArea.verticalScrollBar().update()
 
     def start(self):
         self.vector.parsi()
@@ -22,8 +27,37 @@ class Book(QMainWindow):
 
     def text_searche(self):
         text = self.ui.textEdit.toPlainText()
-        print(self.vector.similarity(text))
         self.ui.textEdit.setText("")
+        reternn = self.vector.similarity(text)
+        self.ui.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        for i in range(len(reternn)):
+            textlabel = self.vector.book_name[reternn[i][0]]
+            textlabel2 = self.vector.book_desc_norm[reternn[i][0]]
+            label = QtWidgets.QLabel(textlabel)
+            label4 = QtWidgets.QLabel()
+            label4.setMinimumHeight(3)
+            label2 = QtWidgets.QLabel(textlabel2)
+            label2.setMinimumHeight(40)
+            label3 = QtWidgets.QLabel()
+            label3.setMinimumHeight(8)
+            if len(textlabel) >= 40:
+                label.setWordWrap(True)
+            if len(textlabel2) >= 40:
+                label2.setWordWrap(True)
+
+            self.vbox.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+            self.vbox.addWidget(label)
+            self.vbox.addWidget(label4)
+            self.vbox.addWidget(label2)
+            self.vbox.addWidget(label3)
+            self.vbox.update()
+
+        # for i in range(len(sims)):
+        #     print("----------")
+        #     print(self.book_name[sims[i][0]], end="\n")
+        #     print(self.book_desc_norm[sims[i][0]], end="\n")
+        #     print("----------")
+
 
 
 if __name__ == '__main__':

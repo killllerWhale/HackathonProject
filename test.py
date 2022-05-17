@@ -71,11 +71,6 @@ class Vector:
         result = result.lower().split()
         inferred_vector = d2v_model.infer_vector(result)
         sims = d2v_model.dv.most_similar([inferred_vector], topn=10)
-        for i in range(len(sims)):
-            print("----------")
-            print(self.book_name[sims[i][0]], end="\n")
-            print(self.book_desc_norm[sims[i][0]], end="\n")
-            print("----------")
         return sims
 
 # #Для обучения модели нам нужен список целевых документов
