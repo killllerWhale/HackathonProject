@@ -72,6 +72,8 @@ def similarity(model):
     test_text = 'студент старуха'.split()
     inferred_vector = model.infer_vector(test_text)
     sims = model.dv.most_similar([inferred_vector], topn=10)
+    for i in range(len(sims)):
+        print(book_desc[sims[i][0]], end="\n")
     return sims
 
 
