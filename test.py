@@ -7,6 +7,7 @@ from gensim.models.word2vec import Word2Vec
 from gensim.models.doc2vec import Doc2Vec
 import pymorphy2
 
+
 class Vector:
     def __init__(self):
         self.book_name = []
@@ -60,10 +61,15 @@ class Vector:
 
     def similarity(self, text):
         d2v_model = Doc2Vec.load('d2v_Model')
-        test_text = text
-        test_text = re.sub('[^a-zA-ZА-я]', ' ', test_text)
-        test_text = test_text.lower().split()
-        inferred_vector = d2v_model.infer_vector(test_text)
+        test_text = text.lower().split()
+        functors_pos = {'INTJ', 'PRCL', 'CONJ', 'PREP'}
+        s = [word for word in test_text if self.pos(word) not in functors_pos]
+        result = ""
+        for i in range(len(s)):
+            result += s[i] + " "
+        result = re.sub('[^a-zA-ZА-я]', ' ', result)
+        result = result.lower().split()
+        inferred_vector = d2v_model.infer_vector(result)
         sims = d2v_model.dv.most_similar([inferred_vector], topn=10)
         for i in range(len(sims)):
             print("----------")
