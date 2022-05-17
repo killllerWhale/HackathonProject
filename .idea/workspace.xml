@@ -1,81 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="Ееееее12112">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_9_2022_7_27_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_9_2022_7_27_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="новый шаг">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/milvus.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/etcd/member/wal/0.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/milvus/rdb_data/000008.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/milvus/rdb_data/LOG.old.1652699923114038" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/milvus/rdb_data/MANIFEST-000009" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/milvus/rdb_data/OPTIONS-000012" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/milvus/rdb_data_meta_kv/000010.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/milvus/rdb_data_meta_kv/LOG.old.1652699904205106" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/milvus/rdb_data_meta_kv/LOG.old.1652699921610466" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/milvus/rdb_data_meta_kv/MANIFEST-000011" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/milvus/rdb_data_meta_kv/OPTIONS-000014" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/minio/.minio.sys/buckets/.bloomcycle.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/minio/.minio.sys/buckets/.minio.sys/buckets/.bloomcycle.bin/fs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/minio/.minio.sys/buckets/.minio.sys/buckets/.usage-cache.bin/fs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/minio/.minio.sys/buckets/.minio.sys/buckets/.usage.json/fs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/minio/.minio.sys/buckets/.minio.sys/buckets/a-bucket/.usage-cache.bin/fs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/minio/.minio.sys/buckets/.tracker.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/minio/.minio.sys/buckets/.usage-cache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/minio/.minio.sys/buckets/.usage.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/minio/.minio.sys/buckets/a-bucket/.usage-cache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/180ccb7bc3b.txn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/180ccb7bc3c.txn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/180ccb7bc3d.txn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/180ccb7bc3e.txn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/180ccb7bc3f.txn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/180ccb7bc40.txn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/180ccb7bc41.txn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/VERSION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/lastId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/lastMark" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/000027.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/000029.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/000032.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/CURRENT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/IDENTITY" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/LOCK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/LOG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/LOG.old.1652703135001053" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/LOG.old.1652703937919710" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/LOG.old.1652705150506080" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/LOG.old.1652705326313295" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/LOG.old.1652706733201995" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/LOG.old.1652706952584436" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/MANIFEST-000033" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/OPTIONS-000033" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/ledgers/OPTIONS-000036" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/000024.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/000026.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/000029.sst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/CURRENT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/IDENTITY" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/LOCK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/LOG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/LOG.old.1652703135299257" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/LOG.old.1652703949112801" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/LOG.old.1652705150749019" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/LOG.old.1652705328471720" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/LOG.old.1652706733463625" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/LOG.old.1652706952798942" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/MANIFEST-000030" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/OPTIONS-000030" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/bookkeeper0/current/locations/OPTIONS-000033" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/zookeeper/version-2/log.14f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/zookeeper/version-2/log.1a7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/zookeeper/version-2/log.207" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/zookeeper/version-2/log.21c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/zookeeper/version-2/snapshot.1a6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/zookeeper/version-2/snapshot.206" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volumes/pulsar/standalone/zookeeper/version-2/snapshot.21b" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652696591031</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="новый шаг">
+      <created>1652767664222</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1652767664222</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -325,6 +260,7 @@
     <MESSAGE value="one" />
     <MESSAGE value="Ееееее" />
     <MESSAGE value="Ееееее12112" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ееееее12112" />
+    <MESSAGE value="новый шаг" />
+    <option name="LAST_COMMIT_MESSAGE" value="новый шаг" />
   </component>
 </project>

@@ -48,28 +48,31 @@ with open("books.csv", encoding='utf-8') as r_file:
 
 
 # Для обучения модели нам нужен список целевых документов
-def tagged_document(list_of_ListOfWords):
-    for x, ListOfWords in enumerate(list_of_ListOfWords):
-        yield doc2vec.TaggedDocument(ListOfWords, [x])
+# def tagged_document(list_of_ListOfWords):
+#     for x, ListOfWords in enumerate(list_of_ListOfWords):
+#         yield doc2vec.TaggedDocument(ListOfWords, [x])
 
 
 # тренировочные данные
-data_train = list(tagged_document(book_desc))
-
-d2v_model = doc2vec.Doc2Vec(vector_size=40, min_count=2, epochs=30)
+#data_train = list(tagged_document(book_desc))
 
 # расширить словарный запас
-d2v_model.build_vocab(data_train)
+#d2v_model.build_vocab(data_train)
 
 # Обучение модели Doc2Vec
-d2v_model.train(data_train, total_examples=d2v_model.corpus_count, epochs=d2v_model.epochs)
+#d2v_model.train(data_train, total_examples=d2v_model.corpus_count, epochs=d2v_model.epochs)
 
 # # Анализ выходных данных
 # analyze = d2v_model.infer_vector(['нож', 'студент', 'топор', 'старуха'])
-#
+#Запись модели
+#d2v_model.save('d2v_Model')
+d2v_model = Word2Vec.load('d2v_Model')
+
 
 def similarity(model):
-    test_text = 'студент убил старуху топором'.split()
+    test_text = 'Действие происходит в бедном районе Петербурга 1860-х годов. Родион Раскольников, бывший студент, закладывает старухе-процентщице последнюю ценную вещь.'
+    test_text = re.sub('[^a-zA-ZА-я]', ' ', test_text)
+    test_text = test_text.lower().split()
     inferred_vector = model.infer_vector(test_text)
     sims = model.dv.most_similar([inferred_vector], topn=10)
     for i in range(len(sims)):
@@ -82,21 +85,7 @@ def similarity(model):
 
 print(similarity(d2v_model))
 
-#
-# # Для обучения модели нам нужен список целевых документов
-# def tagged_document(list_of_ListOfWords):
-#     for x, ListOfWords in enumerate(list_of_ListOfWords):
-#         yield doc2vec.TaggedDocument(ListOfWords, [x])
-#
-#
-# # тренировочные данные
-# data_train = list(tagged_document(book_desc))
-#
-# # вывести обученный набор данных
-# print(data_train[:1])
 
-#print(book_desc)
-# print(book_name)
 
 
 
