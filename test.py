@@ -18,23 +18,6 @@ class Vector:
         return morth.parse(word)[0].tag.POS
 
     def parsi(self):
-        # with open("books.csv", encoding='utf-8') as r_file:
-        #     # Создаем объект reader, указываем символ-разделитель ","
-        #     file_reader = csv.reader(r_file, delimiter = ",")
-        #     # Считывание данных из CSV файла
-        #     model_string = ""
-        #     for row in file_reader:
-        #         for elem in row:
-        #             model_string += elem + " "
-        #     processed_article = model_string.lower()
-        #     processed_article = re.sub('[^a-zA-ZА-я]', ' ', processed_article)
-        #     processed_article = re.sub(r'\s+', ' ', processed_article)
-        #     # создаем модель для распознавания
-        #     all_sentences = nltk.sent_tokenize(processed_article)
-        #     all_words = [nltk.word_tokenize(sent) for sent in all_sentences]
-        #     w2v_model = Word2Vec(all_words, min_count=0, workers=cpu_count())
-
-        #Создаем массив векторов описания
         with open("books.csv", encoding='utf-8') as r_file:
             file_reader = csv.reader(r_file, delimiter=",")
             for row in file_reader:
@@ -77,24 +60,4 @@ class Vector:
         inferred_vector = d2v_model.infer_vector(result)
         sims = d2v_model.dv.most_similar([inferred_vector], topn=10)
         return sims
-
-# #Для обучения модели нам нужен список целевых документов
-# def tagged_document(list_of_ListOfWords):
-#     for x, ListOfWords in enumerate(list_of_ListOfWords):
-#         yield doc2vec.TaggedDocument(ListOfWords, [x])
-#
-#
-# #тренировочные данные
-# data_train = list(tagged_document(book_desc))
-# d2v_model = doc2vec.Doc2Vec(vector_size=40, min_count=2, epochs=30)
-# #расширить словарный запас
-# d2v_model.build_vocab(data_train)
-#
-# #Обучение модели Doc2Vec
-# d2v_model.train(data_train, total_examples=d2v_model.corpus_count, epochs=d2v_model.epochs)
-#
-# # Анализ выходных данных
-# analyze = d2v_model.infer_vector(['нож', 'студент', 'топор', 'старуха'])
-# #Запись модели
-# d2v_model.save('d2v_Model')
 
