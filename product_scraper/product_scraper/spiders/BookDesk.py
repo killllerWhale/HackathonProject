@@ -3,7 +3,7 @@ import scrapy
 class BookCheck(scrapy.Spider):
     name = "books"
     allowed_domain =["avidreaders.ru"]
-    start_urls = ["https://avidreaders.ru/books/"]
+    start_urls = ["https://avidreaders.ru"]
 
     def parseLink(self, response, **kwargs):
         item = {
@@ -13,7 +13,9 @@ class BookCheck(scrapy.Spider):
         yield item
 
     def parse(self, response, **kwargs):
-        link = response.css("div.card_info a:last-child::attr(href)").getall()
+        genres = response.css("ul.genres_list li a::attr(href)").getall()
+        yield from response.follow_all(genres)
+        link = response.css("div.card_info a:last-child::attr(href)").getall()[:500]
         yield from response.follow_all(link, callback=self.parseLink)
         href = response.css("div.pagination li:last-child a::attr(href)").getall()
         yield from response.follow_all(href)
