@@ -90,9 +90,6 @@ class Book(QMainWindow):
             msg.setIcon(QMessageBox.Warning)
             msg.exec_()
 
-
-
-
 if __name__ == '__main__':
     app = QApplication([])
     application = Book()
