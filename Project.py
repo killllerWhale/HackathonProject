@@ -37,6 +37,8 @@ class Book(QMainWindow):
             textPrecent = int(reternn[i][1])
             label = QtWidgets.QLabel(textlabel+"  (совпадение: " + str(textPrecent*100) + "%)")
             label.setStyleSheet('color: rgb(4, 53, 185); font: bold 18px;')
+            label5 = QtWidgets.QLabel("(совпадение: " + str(textPrecent*100) + "%)")
+            label5.setStyleSheet('color: rgb(4, 53, 185); font: bold 6px;')
             label4 = QtWidgets.QLabel()
             label4.setMinimumHeight(3)
             label2 = QtWidgets.QLabel(textlabel2)
@@ -51,6 +53,7 @@ class Book(QMainWindow):
 
             self.vbox.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
             self.vbox.addWidget(label)
+            self.vbox.addWidget(label5)
             self.vbox.addWidget(label4)
             self.vbox.addWidget(label2)
             self.vbox.addWidget(label3)
