@@ -68,6 +68,11 @@ class Vector:
         for i in range(len(s)):
             result += s[i] + " "
         result = re.sub('[^a-zA-ZА-я]', ' ', result)
+        result = result.replace("  ", " ")
+        result = result.replace("   ", " ")
+        result = result.replace("    ", " ")
+        result = result.replace("     ", " ")
+        result = result.replace("      ", " ")
         result = result.lower().split()
         inferred_vector = d2v_model.infer_vector(result)
         sims = d2v_model.dv.most_similar([inferred_vector], topn=10)

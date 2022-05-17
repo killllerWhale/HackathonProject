@@ -30,14 +30,18 @@ class Book(QMainWindow):
         self.ui.textEdit.setText("")
         reternn = self.vector.similarity(text)
         self.ui.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        print(reternn)
         for i in range(len(reternn)):
             textlabel = self.vector.book_name[reternn[i][0]]
             textlabel2 = self.vector.book_desc_norm[reternn[i][0]]
-            label = QtWidgets.QLabel(textlabel)
+            textPrecent = int(reternn[i][1])
+            label = QtWidgets.QLabel(textlabel+"  (совпадение: " + str(textPrecent*100) + "%)")
+            label.setStyleSheet('color: rgb(4, 53, 185); font: bold 18px;')
             label4 = QtWidgets.QLabel()
             label4.setMinimumHeight(3)
             label2 = QtWidgets.QLabel(textlabel2)
-            label2.setMinimumHeight(40)
+            label2.setStyleSheet('color: rgb(86, 111, 178); font: bold 13px;')
+            label2.setMinimumHeight(48)
             label3 = QtWidgets.QLabel()
             label3.setMinimumHeight(8)
             if len(textlabel) >= 40:
