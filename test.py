@@ -56,9 +56,6 @@ def tagged_document(list_of_ListOfWords):
 # тренировочные данные
 data_train = list(tagged_document(book_desc))
 
-# вывести обученный набор данных
-print(data_train[:1])
-
 d2v_model = doc2vec.Doc2Vec(vector_size=40, min_count=2, epochs=30)
 
 # расширить словарный запас
@@ -69,13 +66,14 @@ d2v_model.train(data_train, total_examples=d2v_model.corpus_count, epochs=d2v_mo
 
 # Анализ выходных данных
 analyze = d2v_model.infer_vector(['нож', 'студент', 'топор', 'старуха'])
-print(analyze)
+
 
 def similarity(model):
-    test_text = 'нож'.split()
+    test_text = 'студент старуха'.split()
     inferred_vector = model.infer_vector(test_text)
-    sims = model.most_similar([inferred_vector], topn=10)
+    sims = model.dv.most_similar([inferred_vector], topn=10)
     return sims
+
 
 print(similarity(d2v_model))
 
