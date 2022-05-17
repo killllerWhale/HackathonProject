@@ -1,5 +1,6 @@
 import sys
 
+import pymysql
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 
@@ -22,7 +23,6 @@ class Book(QMainWindow):
         self.ui.textEdit.textChanged.connect(lambda:self.enter())
 
     def start(self):
-        self.vector.parsi()
         self.ui.pushButton.clicked.connect(lambda: self.text_searche())
 
     def enter(self):
@@ -50,6 +50,9 @@ class Book(QMainWindow):
                     self.clearvbox(item.layout())
 
     def text_searche(self):
+        con = pymysql.connect(host='localhost', user='root', password='nlp2', database='books')
+        cur = con.cursor()
+        cur.close()
         try:
             self.clearvbox()
             text = self.ui.textEdit.toPlainText()
@@ -58,8 +61,10 @@ class Book(QMainWindow):
             self.ui.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
             for i in range(len(reternn)):
                 textPrecent = int(reternn[i][1] * 100)
-                textlabel = self.vector.book_name[reternn[i][0]] +"  (совпадение: " + str(textPrecent) + "%)"
-                textlabel2 = self.vector.book_desc_norm[reternn[i][0]]
+                name = cur.execute('SELECT book_name FROM book WHERE id=%s', (reternn[i][0] + 1))
+                desc = cur.execute('SELECT book_desc FROM book WHERE id=%s', (reternn[i][0] + 1))
+                textlabel = str(name) + "  (совпадение: " + str(textPrecent) + "%)"
+                textlabel2 = str(desc)
                 label = QtWidgets.QLabel(textlabel)
                 label.setMaximumWidth(460)
                 label.setMinimumHeight(4)
