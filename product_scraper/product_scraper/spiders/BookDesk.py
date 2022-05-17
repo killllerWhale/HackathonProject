@@ -15,7 +15,7 @@ class BookCheck(scrapy.Spider):
     def parse(self, response, **kwargs):
         genres = response.css("ul.genres_list li a::attr(href)").getall()
         yield from response.follow_all(genres)
-        link = response.css("div.card_info a:last-child::attr(href)").getall()[:500]
+        link = response.css("div.card_info a:last-child::attr(href)").getall()[:1000]
         yield from response.follow_all(link, callback=self.parseLink)
         href = response.css("div.pagination li:last-child a::attr(href)").getall()
         yield from response.follow_all(href)
