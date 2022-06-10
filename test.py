@@ -1,10 +1,4 @@
 import re
-import nltk
-import csv
-
-from multiprocessing import cpu_count
-from gensim.models import doc2vec
-from gensim.models.word2vec import Word2Vec
 import urllib.request
 from gensim.models.doc2vec import Doc2Vec
 import pymorphy2
@@ -15,9 +9,6 @@ class Vector:
         f = open("d2v_Model_new", "wb")
         f.write(logo)
         f.close()
-        self.book_name = []
-        self.book_desc = []
-        self.book_desc_norm = []
 
     def pos(self,word, morth=pymorphy2.MorphAnalyzer()):
         return morth.parse(word)[0].tag.POS

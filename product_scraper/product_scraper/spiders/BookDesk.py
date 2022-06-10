@@ -19,4 +19,3 @@ class BookCheck(scrapy.Spider):
         yield from response.follow_all(link, callback=self.parseLink)
         href = response.css("div.pagination li:last-child a::attr(href)").getall()
         yield from response.follow_all(href)
-        pass

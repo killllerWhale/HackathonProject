@@ -3,7 +3,6 @@ import sys
 import pymysql
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
-
 from mydesign import Ui_MainWindow
 from test import Vector
 
@@ -13,7 +12,6 @@ class Book(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.vector = Vector()
         self.start()
         self.checkin_completion = 0
         self.widget = QtWidgets.QWidget()
@@ -53,11 +51,12 @@ class Book(QMainWindow):
         con = pymysql.connect(host='localhost', user='root', password='nlp2', database='books')
         cur = con.cursor()
         cur.close()
+        vector = Vector()
         try:
             self.clearvbox()
             text = self.ui.textEdit.toPlainText()
             self.ui.textEdit.setText("")
-            reternn = self.vector.similarity(text)
+            reternn = vector.similarity(text)
             self.ui.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
             for i in range(len(reternn)):
                 textPrecent = int(reternn[i][1] * 100)
