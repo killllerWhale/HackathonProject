@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="mmm">
-      <change afterPath="$PROJECT_DIR$/icon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/HackathonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HackathonProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_scraper/product_scraper/spiders/BookDesk.py" beforeDir="false" afterPath="$PROJECT_DIR$/product_scraper/product_scraper/spiders/BookDesk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book_new.csv" beforeDir="false" afterPath="$PROJECT_DIR$/book_new.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_scraper/product_scraper/spiders/book.csv" beforeDir="false" afterPath="$PROJECT_DIR$/book.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vec_to_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/vec_to_sql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +28,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Project.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/test.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Python/Python download/Lib/site-packages/firebase/__init__.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,8 +51,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\HackathonProject" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\HackathonProject" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.Project">
+  <component name="RunManager" selected="Python.vec_to_sql">
     <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="HackathonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -167,9 +170,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.vec_to_sql" />
         <item itemvalue="Python.Project" />
         <item itemvalue="Python.1" />
-        <item itemvalue="Python.vec_to_sql" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -372,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652819333025</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="mmm">
+      <created>1654863819347</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1654863819347</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
