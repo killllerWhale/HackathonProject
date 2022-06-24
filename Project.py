@@ -48,9 +48,6 @@ class Book(QMainWindow):
                     self.clearvbox(item.layout())
 
     def text_searche(self):
-        con = pymysql.connect(host='localhost', user='root', password='nlp2', database='books')
-        cur = con.cursor()
-        cur.close()
         vector = Vector()
         try:
             self.clearvbox()
