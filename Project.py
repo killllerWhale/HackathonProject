@@ -1,10 +1,30 @@
 import sys
-
-import pymysql
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from mydesign import Ui_MainWindow
 from test import Vector
+import pyrebase
+
+config = {
+    "apiKey": "AIzaSyBNnLM1ItodpQFU8jvkwuYOniyQ97VZADA",
+    "authDomain": "bookfinder-97299.firebaseapp.com",
+    "databaseURL": "https://bookfinder-97299-default-rtdb.europe-west1.firebasedatabase.app",
+    "projectId": "bookfinder-97299",
+    "storageBucket": "bookfinder-97299.appspot.com",
+    "messagingSenderId": "1079515581653",
+    "appId": "1:1079515581653:web:57e569b2c6e82161e9265c",
+    "measurementId": "G-V8NT67P272"
+}
+
+firebase = pyrebase.initialize_app(config)
+
+login = "ruslan@gmail.com"
+password = "12345678"
+
+auth = firebase.auth()
+auth.sign_in_with_email_and_password(login, password)
+
+db = firebase.database()
 
 
 class Book(QMainWindow):
@@ -57,13 +77,10 @@ class Book(QMainWindow):
             self.ui.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
             for i in range(len(reternn)):
                 textPrecent = int(reternn[i][1] * 100)
-                cur = con.cursor()
-                cur.execute('SELECT book_name FROM book WHERE id=%s', (reternn[i][0] + 1))
-                name = cur.fetchone()
-                cur.execute('SELECT book_desc FROM book WHERE id=%s', (reternn[i][0] + 1))
-                desc = cur.fetchone()
-                textlabel = name[0] + "  (совпадение: " + str(textPrecent) + "%)"
-                textlabel2 = desc[0]
+                name = db.child(reternn[i][0]).child("col1").get().val()
+                desc = db.child(reternn[i][0]).child("col2").get().val()
+                textlabel = name + "  (совпадение: " + str(textPrecent) + "%)"
+                textlabel2 = desc
                 label = QtWidgets.QLabel(textlabel)
                 label.setMaximumWidth(460)
                 label.setMinimumHeight(4)
@@ -93,6 +110,7 @@ class Book(QMainWindow):
             msg.setText("Что то пошло не так ")
             msg.setIcon(QMessageBox.Warning)
             msg.exec_()
+            print(e)
 
 
 if __name__ == '__main__':

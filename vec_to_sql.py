@@ -21,3 +21,6 @@ auth = firebase.auth()
 auth.sign_in_with_email_and_password(login, password)
 
 db = firebase.database()
+
+nul = db.child("0").child("col2").get().val()
+print(nul)

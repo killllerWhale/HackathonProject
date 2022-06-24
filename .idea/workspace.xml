@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="mmm">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vec_to_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/vec_to_sql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +51,7 @@
       <recent name="D:\HackathonProject" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.vec_to_sql">
+  <component name="RunManager" selected="Python.Project">
     <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="HackathonProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,8 +166,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.vec_to_sql" />
         <item itemvalue="Python.Project" />
+        <item itemvalue="Python.vec_to_sql" />
         <item itemvalue="Python.1" />
         <item itemvalue="Python.test" />
       </list>
@@ -380,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654863819347</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="mmm">
+      <created>1656065077602</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1656065077603</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
