@@ -2,8 +2,12 @@ import sys
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from mydesign import Ui_MainWindow
-from test import Vector
 import pyrebase
+import re
+import urllib.request
+from gensim.models.doc2vec import Doc2Vec
+import pymorphy2
+
 
 config = {
     "apiKey": "AIzaSyBNnLM1ItodpQFU8jvkwuYOniyQ97VZADA",
@@ -25,6 +29,36 @@ auth = firebase.auth()
 auth.sign_in_with_email_and_password(login, password)
 
 db = firebase.database()
+
+
+class Vector:
+    def __init__(self):
+        logo = urllib.request.urlopen("https://drive.google.com/u/0/uc?id=1sMGmBQGyy4ZH1rIcMzL8Tymi6_WAYVF_&export=download").read()
+        f = open("d2v_Model_new", "wb")
+        f.write(logo)
+        f.close()
+
+    def pos(self,word, morth=pymorphy2.MorphAnalyzer()):
+        return morth.parse(word)[0].tag.POS
+
+    def similarity(self, text):
+        d2v_model = Doc2Vec.load('d2v_Model_new')
+        test_text = text.lower().split()
+        functors_pos = {'INTJ', 'PRCL', 'CONJ', 'PREP'}
+        s = [word for word in test_text if self.pos(word) not in functors_pos]
+        result = ""
+        for i in range(len(s)):
+            result += s[i] + " "
+        result = re.sub('[^a-zA-ZА-я]', ' ', result)
+        result = result.replace("  ", " ")
+        result = result.replace("   ", " ")
+        result = result.replace("    ", " ")
+        result = result.replace("     ", " ")
+        result = result.replace("      ", " ")
+        result = result.lower().split()
+        inferred_vector = d2v_model.infer_vector(result)
+        sims = d2v_model.dv.most_similar([inferred_vector], topn=10)
+        return sims
 
 
 class Book(QMainWindow):

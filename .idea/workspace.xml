@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6025ba30-31d7-427d-a549-423451b57bcf" name="Changes" comment="mmm">
+      <change beforePath="$PROJECT_DIR$/.idea/HackathonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HackathonProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vec_to_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/vec_to_sql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -385,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656065077603</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="mmm">
+      <created>1656068536202</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1656068536202</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
